@@ -17,3 +17,7 @@ toSort.sort(); // [1, 2, 3, 4, 5]
 // Create new copy (spread operator)
 let newArr = [... arr];
 console.log(newArr);
+
+// Remove all duplicates (creates new array)
+const duplicates = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
+const unique = [...new Set(duplicates)];
