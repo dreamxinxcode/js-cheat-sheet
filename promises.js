@@ -1,22 +1,17 @@
-// clepto.js
-gotoTheirHouse(billy, () => {
-  pretendToBeFriends(billy, () => {
-    stealWhenNotLooking(billy.mixtapes, (items) => {
-      hideInBackpack(items, () => {
-        console.log("I don't feel well. I gotta go home now Billy!");
-      });
-    });
-  });
+const cleanRoom = new Promise((resolve, reject) => {
+  let isClean = true;
+
+  if (isClean) {
+    resolve('clean');
+  } else {
+    reject('not clean');
+  }
 });
 
-// Into this:
-
-// clepto_promises.js
-gotoTheirHouse(billy)
-  .then(pretendToBeFriends)
-  .then(stealWhenNotLooking)
-  .then(hideInBackpack)
-  .then(() => {
-    console.log("I don't feel well. I gotta go home now Billy!");
+cleanRoom
+  .then((res) => {
+    console.log('Room is', res);
+  })
+  .catch((err) => {
+    console.log('Room is', err);
   });
-
